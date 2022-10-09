@@ -24,7 +24,7 @@ touch .env
 ```
 to create .env file.
 
-5. Add 
+5. Add database url on your .env file
 ```bash
 DATABASE_URL: [YOUR POSTGRES DATABASE URL]
 ```
