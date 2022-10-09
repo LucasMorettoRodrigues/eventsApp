@@ -1,0 +1,16 @@
+.menu {
+  display: flex;
+  align-items: center;
+  border-bottom: 2px solid lightgray;
+  padding: 20px;
+  background-color: rgba(211, 211, 211, 0.2);
+}
+
+.menu h1 {
+  flex: 1;
+}
+
+.menu .buttonsContainer {
+  display: flex;
+  gap: 10px;
+}

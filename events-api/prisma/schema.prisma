@@ -1,0 +1,35 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+model User {
+  id          String  @id @default(uuid())
+  name        String  @unique
+  events      UsersOnEvents[]
+
+  @@map("users")
+}
+
+model Event {
+  id          String @id @default(uuid())
+  description String
+  date        DateTime
+  users       UsersOnEvents[]
+
+  @@map("events")
+}
+
+model UsersOnEvents {
+  user      User  @relation(fields: [userId], references: [id], onDelete: Cascade)
+  userId    String
+  event     Event @relation(fields: [eventId], references: [id], onDelete: Cascade)
+  eventId   String
+
+  @@id([userId, eventId])
+  @@map("users_on_events")
+}

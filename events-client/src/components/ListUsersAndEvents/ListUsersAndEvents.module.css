@@ -1,0 +1,112 @@
+.usersAndEventsSection {
+  margin: 20px;
+  display: flex;
+  gap: 20px;
+  padding-bottom: 50px;
+}
+
+@media only screen and (max-width: 1000px) {
+  .usersAndEventsSection {
+    flex-direction: column;
+  }
+}
+
+.usersAndEventsSection .list:nth-child(1) {
+  flex: 1.5;
+}
+
+.usersAndEventsSection .list {
+  flex: 1;
+  height: min-content;
+  box-shadow: rgba(50, 50, 93, 0.2) 0px 6px 12px -2px,
+    rgba(0, 0, 0, 0.1) 0px 3px 7px -3px;
+  padding-bottom: 10px;
+  border-radius: 10px;
+  background-color: rgba(211, 211, 211, 0.2);
+}
+
+.usersAndEventsSection .list .header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  color: #666;
+  padding: 20px;
+  border-bottom: 1px solid lightgray;
+  padding-bottom: 10px;
+  margin-bottom: 10px;
+}
+
+.usersAndEventsSection .list .header h2 {
+  font-weight: 300;
+  letter-spacing: 2px;
+}
+
+.usersAndEventsSection .list .row {
+  padding: 10px 20px;
+  display: flex;
+  align-items: center;
+}
+
+.usersAndEventsSection .list .row:nth-child(even) {
+  background-color: rgba(211, 211, 211, 0.3);
+}
+
+.usersAndEventsSection .list .row p {
+  flex: 1;
+  font-size: 16px;
+  font-weight: 300;
+  color: #666;
+}
+
+.usersAndEventsSection .list .row .date {
+  font-size: 13px;
+  font-weight: 500;
+  color: #999;
+}
+
+.usersAndEventsSection .list .row .buttonsContainer {
+  display: flex;
+  gap: 10px;
+}
+
+.usersAndEventsSection .list .subItemsContainer {
+  background-color: white;
+  padding-bottom: 10px;
+}
+
+.usersAndEventsSection .list .subItemsHeader {
+  padding: 10px 20px;
+  font-size: 14px;
+  font-weight: 400;
+  color: #999;
+}
+
+.usersAndEventsSection .list .subItem {
+  padding: 5px 20px;
+  display: flex;
+  align-items: center;
+  background-color: white;
+}
+
+.usersAndEventsSection .list .subItem p {
+  flex: 1;
+  font-size: 12px;
+  font-weight: 500;
+  color: #666;
+}
+
+.usersAndEventsSection .list .subItem .date {
+  font-size: 13px;
+  font-weight: 500;
+  color: #999;
+}
+
+.emptyList {
+  text-align: center;
+  color: #666;
+  font-size: 18px;
+  font-weight: 100;
+  font-style: italic;
+  margin-top: 40px;
+  margin-bottom: 30px;
+}
