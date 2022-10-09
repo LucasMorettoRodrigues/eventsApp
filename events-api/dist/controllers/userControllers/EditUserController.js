@@ -10,12 +10,16 @@ var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, ge
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.EditUserController = void 0;
+const AppError_1 = require("../../errors/AppError");
 const EditUserService_1 = require("../../services/userServices/EditUserService");
 class EditUserController {
     handle(request, response) {
         return __awaiter(this, void 0, void 0, function* () {
             const { id } = request.params;
             const { name } = request.body;
+            if (!name) {
+                throw new AppError_1.AppError("Invalid Request.", 400);
+            }
             const editUserService = new EditUserService_1.EditUserService();
             const result = yield editUserService.execute({ id, name });
             return response.status(200).json(result);

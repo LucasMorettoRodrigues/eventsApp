@@ -10,11 +10,16 @@ var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, ge
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.CreateEventController = void 0;
+const AppError_1 = require("../../errors/AppError");
 const CreateEventService_1 = require("../../services/eventServices/CreateEventService");
+const helpers_1 = require("../../utils/helpers");
 class CreateEventController {
     handle(request, response) {
         return __awaiter(this, void 0, void 0, function* () {
             const { description, date, userIds } = request.body;
+            if (!description || !userIds || !date || !(0, helpers_1.isDate)(date)) {
+                throw new AppError_1.AppError("Invalid Request.", 400);
+            }
             const createEventService = new CreateEventService_1.CreateEventService();
             const result = yield createEventService.execute({
                 description,
